@@ -18,4 +18,4 @@ jobs:
           echo ${{ github.event.client_payload.github.action }}
           echo ${{ github.event.client_payload.github.actor }}
       - name: echo "Hello"
-        run: echo "Hello respository dispatch"
+        run: echo "Hello test2yml"
