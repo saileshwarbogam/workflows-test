@@ -3,7 +3,6 @@ name: java SDK
 on:
   repository_dispatch:
     types: [my-event]
-  workflow_dispatch:
 
 jobs:
   build:
