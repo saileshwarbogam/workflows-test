@@ -6,10 +6,10 @@ on:
   workflow_dispatch:
     inputs:
       sdkVersion:
-        description: 'Sdk version'
+        description: 'SDK version'
         required: false
         type: string
-      typeOfSdkVersion:
+      typeOfRelease:
         description: 'Type of release'
         required: false
         type: choice
