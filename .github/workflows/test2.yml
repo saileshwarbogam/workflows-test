@@ -29,6 +29,6 @@ jobs:
       - name: print trigger details
         run: |
           echo ${{ github.event.client_payload.github.action }}
-          echo ${{ github.event.client_payload.typeOfSdkVersion }}
+          echo ${{ inputs.typeOfSdkVersion }}
       - name: echo "Hello"
         run: echo "Hello test2yml"
