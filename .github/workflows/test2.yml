@@ -4,6 +4,19 @@ on:
   repository_dispatch:
     types: [my-event]
   workflow_dispatch:
+    inputs:
+      sdkVersion:
+        description: 'Sdk version'
+        required: false
+        type: string
+      typeOfSdkVersion:
+        description: 'Type of SDK version'
+        required: false
+        type: choice
+        options:
+          - internal
+          - external
+      
 
 jobs:
   build:
@@ -16,6 +29,6 @@ jobs:
       - name: print trigger details
         run: |
           echo ${{ github.event.client_payload.github.action }}
-          echo ${{ github.event.client_payload.github.actor }}
+          echo ${{ inputs.typeOfSdkVersion }}
       - name: echo "Hello"
         run: echo "Hello test2yml"
