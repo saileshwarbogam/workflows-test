@@ -10,7 +10,7 @@ on:
         required: false
         type: string
       typeOfSdkVersion:
-        description: 'Type of SDK version'
+        description: 'Type of release'
         required: false
         type: choice
         options:
