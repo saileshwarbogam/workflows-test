@@ -1,4 +1,4 @@
-name: run the workflow
+name: java SDK
 
 on:
   repository_dispatch:

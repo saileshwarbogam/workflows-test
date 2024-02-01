@@ -1,4 +1,4 @@
-name: run the workflow
+name: Python SDK
 
 on:
   repository_dispatch:
