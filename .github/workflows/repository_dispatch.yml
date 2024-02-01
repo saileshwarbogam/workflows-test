@@ -1,8 +1,23 @@
 name: java SDK
 
 on:
-  repository_dispatch:
-    types: [my-event]
+  pull_request:
+    branches:
+      - master
+  
+  workflow_dispatch:
+    inputs:
+      sdkVersion:
+        description: 'SDK version'
+        required: false
+        type: string
+      sdkVersionType:
+        description: 'SDK version type'
+        required: false
+        type: choice
+        options:
+          - internal
+          - public
 
 jobs:
   build:
