@@ -23,13 +23,13 @@ jobs:
   build:
     name: run-workflow
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        environment: [development, staging, production]
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
       - name: print trigger details
         run: |
-          echo ${{ github.event.client_payload.github.action }}
-          echo ${{ github.event.client_payload.github.actor }}
-      - name: echo "Hello"
-        run: echo "Hello respository dispatch"
+          # echo ${{ matrix.environment }}
