@@ -1,7 +1,7 @@
 name: java SDK
 
 on:
-  pull_request:
+  push:
     branches:
       - master
   
@@ -32,4 +32,4 @@ jobs:
           fetch-depth: 0
       - name: print trigger details
         run: |
-          # echo ${{ matrix.environment }}
+          echo ${{ matrix.environment }}
