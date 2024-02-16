@@ -1,16 +1,35 @@
-# common.yml
-name: My Workflow
+name: java SDK
 
 on:
   push:
     branches:
       - master
+  
+  workflow_dispatch:
+    inputs:
+      sdkVersion:
+        description: 'SDK version'
+        required: false
+        type: string
+      sdkVersionType:
+        description: 'SDK version type'
+        required: false
+        type: choice
+        options:
+          - internal
+          - public
 
 jobs:
-  job_template:
+  build:
+    name: run-workflow
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        environment: [development, staging, production]
     steps:
-      - name: Step 1
-        run: echo "This common5"
-      - name: Step 2
-        run: echo "This common4"
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: print trigger details
+        run: |
+          echo ${{ matrix.environment }}
